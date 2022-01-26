@@ -9,6 +9,7 @@ export default function Card(props) {
   return <div className='card'>
         {/* Esta entre llaves porque soy una expresion de JS */}
       <h2>{props.titulo}</h2>
+      <button onClick={()=>{props.eliminar(props.numero)}}>Eliminar</button>
       <p>Mi contenido {props.numero}</p>
       <p id='contenido'>Numero: {numero}</p>
       <p>Numero: {numero}</p>

@@ -28,8 +28,13 @@ const App = ()=>{
   //const listaAlumnos = [<p>Ivan</p>,<p>Esteban</p>,<p>Daniel</p>]
 
   const agregarTarjeta = () =>{
-    tarjetas.push(<Card key={tarjetas.length} titulo={`La tarjeta numero ${tarjetas.length}`} numero={tarjetas.length}/>)
-    setTarjetas([...tarjetas])
+    tarjetas.push(Card)
+    setTarjetas([...tarjetas]) // Spread operator
+  }
+
+  const eliminarTarjeta = (id)=>{
+    const nuevasTarjetas = tarjetas.filter((Card,index)=>index!==id)
+    setTarjetas(nuevasTarjetas)
   }
 
   return(
@@ -38,7 +43,8 @@ const App = ()=>{
       <h2>Prueba de css</h2>
       <button onClick={agregarTarjeta}>Agregar tarjeta</button>
       <div className='cuadricula'>
-        {tarjetas}
+        {/* Resolver este reto */}
+        {tarjetas.map((Card,index)=><Card eliminar={eliminarTarjeta} key={index} numero={index} titulo={`Tarjeta numero: ${index}`}/>)}
       </div>
       
       {/* {listaAlumnos} */}
