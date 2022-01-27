@@ -28,9 +28,23 @@ export default function GotAPI() {
         fetchData()
     },[]) // No omitir, causa ciclos infinitos
 
+    // Desestructuración
+
+    const miObjeto = {
+        nombre: "Tzuzul",
+        ciudad: "Ciudad de México"
+    }
+
+    //const nombre = miObjeto.nombre
+    const {nombre} = miObjeto
+
     return <div>
         {console.log(characters)}
         <button onClick={()=>{setActive(!active)}}>{active?"Activado":"Desactivado"}</button>
-        {characters.map(character=><Character key={character.id} character={character}/>)}
+        {characters.map(character=><Character key={character.id} character={character}>
+            {/* Children: */}
+            <p>Contenido</p>
+            <p>Contenido</p>
+        </Character>)}
     </div>;
 }
