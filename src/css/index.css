@@ -1,7 +1,30 @@
+/* Metodología BEM */
+/* Dividir la interfaz en componentes */
+/* Blocks, Elements, Modifiers */
+/* Bloques, Elementos y Modificadores */
 body{
   background-color: rgb(238, 238, 238);
 }
+.page{
+  max-width: 1366px;
+  margin: 0 auto;
+}
 .cuadricula{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
+}
+
+.movies{
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3,1fr);
+}
+.movie__image{
+  width: 100%;
+}
+.movie__title{
+  font-size: 2rem;
+}
+.movie__stars{
+  font-size: 3rem;
 }
