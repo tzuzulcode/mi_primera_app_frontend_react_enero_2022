@@ -3,7 +3,7 @@
 /* Blocks, Elements, Modifiers */
 /* Bloques, Elementos y Modificadores */
 body{
-  background-color: rgb(238, 238, 238);
+  margin: 0;
 }
 .page{
   max-width: 1366px;
@@ -12,6 +12,15 @@ body{
 .cuadricula{
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
+}
+
+.main__dark{
+  background-color: rgb(24, 24, 24);
+  color: white;
+}
+.main__light{
+  background-color: rgb(238, 238, 238);
+  color: black;
 }
 
 .movies{

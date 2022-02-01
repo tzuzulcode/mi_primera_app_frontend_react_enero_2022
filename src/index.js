@@ -4,12 +4,16 @@ import './css/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import UserContext from './context/UserContext';
+import ThemeContext from './context/ThemeContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <UserContext>
-      <App />
-    </UserContext>
+    <ThemeContext>
+      {/* children: */}
+      <UserContext>
+        <App />
+      </UserContext>
+    </ThemeContext>
   </React.StrictMode>,
   document.getElementById('root')
 );

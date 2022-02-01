@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import Movies from '../components/Movies';
 import Post from '../components/Post/Post';
 import { userContext } from '../context/UserContext';
@@ -25,7 +24,6 @@ export default function Home() {
         {console.log(characters)}
         <p>{user.nombre}</p>
         <button onClick={()=>{setUser({nombre:"Tzuzul",foto:"Mi foto"})}}>Iniciar sesión</button>
-        <Link to="/home2">Ir a home 2</Link>
         <Movies movies={characters}/>
 
         <Post usuario={user}/>
