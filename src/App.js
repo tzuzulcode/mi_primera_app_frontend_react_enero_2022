@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Home2 from './pages/Home2'
 import { themeContext } from './context/ThemeContext'
 import Login from './pages/Login'
+import LoginState from './pages/LoginState'
 
 const App = ()=>{
     const {theme,changeTheme} = useContext(themeContext)
@@ -20,6 +21,7 @@ const App = ()=>{
           <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/login" element={<Login/>}/>
+            <Route path="/loginstate" element={<LoginState/>}/>
             <Route path="/home2" element={<Home2/>}/>
             <Route path="/fundamentos" element={<Fundamentos/>}/>
             <Route path="/got" element={<GotAPI/>}/>
