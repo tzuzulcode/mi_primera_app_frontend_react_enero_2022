@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import ButtonReducer from '../components/ButtonReducer';
 import Movies from '../components/Movies';
 import Post from '../components/Post/Post';
 import { userContext } from '../context/UserContext';
@@ -26,6 +27,7 @@ export default function Home() {
         <p>{user.nombre}</p>
         <button onClick={()=>{setUser({nombre:"Tzuzul",foto:"Mi foto"})}}>Iniciar sesión</button>
         <Link to="/home2">Ir a home 2</Link>
+        <ButtonReducer/>
         <Movies movies={characters}/>
 
         <Post usuario={user}/>

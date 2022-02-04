@@ -1,31 +1,15 @@
-import React, { useReducer } from 'react';
-
+import React, { useReducer, useState } from 'react';
+import counterReducer,{initialState} from '../reducers/counterReducer'
 export default function ButtonReducer() {
-    const initialState = {
-        counter:0
-    }
-
-    function reducer(state,action){
-        let newState;
-        switch(action.type){
-            case 'add':
-                newState = {counter: state.counter +1}
-            case 'sub':
-                newState = {counter: state.counter -1}
-        }
-
-        return newState
-    }
-
-    const [state,dispatch] = useReducer(reducer,initialState)
-    const action ={
-        type:"add",
-        // data:{
-        //     amount:5
-        // }
-    }
-  return <div>
-      <p>{state.counter}</p>
-      <button onClick={()=>{dispatch(action)}}>Click</button>
-  </div>;
+    const [state,dispatch] = useReducer(counterReducer,initialState)
+    const [counter,setCounter] = useState(0)
+    return <div>
+        <p>{state.counter}</p>
+        <button onClick={()=>{dispatch({type:'add'})}}>Add</button>
+        <button onClick={()=>{dispatch({type:'sub'})}}>Substract</button>
+        <button onClick={()=>{dispatch({type:'addBy',amount:5})}}>Add by 5</button>
+        <p>{counter}</p>
+        <button onClick={()=>{setCounter(counter+1)}}>Click</button>
+        <button onClick={()=>{setCounter(counter-1)}}>Click</button>
+    </div>;
 }
